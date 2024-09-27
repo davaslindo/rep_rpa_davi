@@ -22,11 +22,11 @@ cotacao_dolar = float (cotacao_dolar.replace(',', '.'))
 print(cotacao_dolar)
 
 try:
-    connection = psycopg2.connect(user="avnadmin",
-                                    password="AVNS_I2YSg3hf2GFrMM8X7eZ",
-                                    host="pg-126b320f-ncgaloni-ec04.d.aivencloud.com",
-                                    port="21577",
-                                    database="dbCotacoes")
+    connection = psycopg2.connect(user="admin",
+                                    password="qyXcctOHObv9k1OIXHCRYTakaIhdiDFn",
+                                    host="dpg-crr01q2j1k6c73e7jj7g-a.oregon-postgres.render.com",
+                                    port="5432",
+                                    database="db_teste_0ssl")
     cursor = connection.cursor()
 
     cursor.execute('CALL inserir_cotacao_dolar(%s, %s, %s)', (data, hora, cotacao_dolar))
