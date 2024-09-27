@@ -1,0 +1,43 @@
+
+name: RPA Python
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Run app
+      run: |
+         coverage run RPACotacao.py
+         
+    - name: Tests report
+      run: coverage report -m
+              
+    - name: Publicando no Docker 
+      uses: mr-smithers-excellent/docker-build-push@v6.4
+      with:
+        image: nisflei/rpa_python 
+        tags: ${{github.run_number}}
+        registry: docker.io 
+        dockerfile: dockerfile
+        username: ${{secrets.dockeruser}} 
+        password: ${{secrets.dockerpwd}}
+              
