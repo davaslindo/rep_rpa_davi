@@ -66,10 +66,10 @@ print(f'Na data {data_formatada} e no horário {hora_formatada} um dólar está 
 
 dados = {'cotacao': [dolar], 'data': [data_formatada], 'hora': [hora_formatada]}
 
-user="admin",
-password="qyXcctOHObv9k1OIXHCRYTakaIhdiDFn",
-host="dpg-crr01q2j1k6c73e7jj7g-a.oregon-postgres.render.com",
-port="5432",
+user="admin"
+password="qyXcctOHObv9k1OIXHCRYTakaIhdiDFn"
+host="dpg-crr01q2j1k6c73e7jj7g-a.oregon-postgres.render.com"
+port="5432"
 database="db_teste_0ssl"
 
 try:
