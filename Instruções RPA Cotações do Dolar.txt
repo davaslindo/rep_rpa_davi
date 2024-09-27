@@ -1,0 +1,14 @@
+-- Criar o BD dbCotacoes
+
+CREATE TABLE cotacao_dolar (
+    id SERIAL PRIMARY KEY,
+    data DATE,
+    hora TIME,
+    cotacao DECIMAL(10, 2)
+);
+
+-- Criar a procedure inserir_cotacao_dolar para inserir um registro na tabela cotacao_dolar
+
+-- Criar um RPA em Python para capturar o valor atual do dólar em uma página web e acionar a procedure inserir_cotacao_dolar
+
+- Gerar o executável do RPA e testar
